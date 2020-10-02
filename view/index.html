@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">
+
+<body>
+    <!-- Title -->
+    <header>
+        <p>COVID-19</p>
+        <p>Self-Assessment System</p>
+    </header>
+
+    <div class="container">
+        <form id="regForm" method="GET" action="../control/post.php">
+            <!-- One "tab" for each step in the form: -->
+
+            <div class="col-md-12">
+                <!-- General Information : Step 1 -->
+                <div class="tab">
+                    <div class="col-md-12 col-sm=12">
+                        <p>Name:</p><input type="text" placeholder="Enter Your Full Name" oninput="this.className = ''" name="fname">
+                    </div>
+                    <div class="col-md-12 col-sm=12 ages">
+                        <p class="gen">Age:</p><select name="age" id="age" class="age"></select>
+                    </div>
+                    <div class="col-md-12 col-sm=12">
+                            <p class="gen">Sex</p>
+                            <input class="rad" type="radio" id="male" name="sex" value="male" checked>
+                            <label for="male">Male</label>
+                            <input class="rad" type="radio" id="female" name="sex" value="female">
+                            <label for="female">Female</label>
+                            <input class="rad" type="radio" id="other" name="sex" value="other">
+                            <label for="other">Other</label>
+                    </div>
+                    <div class="col-md-12 col-sm=12 ages">
+                        <p class="gen">Body Temperature ( in Fahrenheit )</p>
+                        <input type="number" name="bodytemp" id="bodytemp" min="90" max="120" value="97">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Symptoms : Step 2 -->
+
+            <div class="col-md-12">
+                <div class="tab">
+                    <div class="col-12">
+                        <p class="simp">Symptoms</p>
+                        <div>
+                            <input type="checkbox" id="symptoms" name="symptom[]" value="breathingproblem"><label
+                                for="breathingproblem">Breathing Problem</label><br>
+                            <input type="checkbox" id="symptoms" name="symptom[]" value="drycough"><label for="drycough">Dry
+                                Cough</label><br>
+                            <input type="checkbox" id="symptoms" name="symptom[]" value="sorethroat"><label
+                                for="sorethroat">Sore Throat</label><br>
+                            <input type="checkbox" id="symptoms" name="symptom[]" value="weakness"><label
+                                for="weakness">Weakness</label><br>
+                            <input type="checkbox" id="symptoms" name="symptom[]" value="runnynose"><label
+                                for="runnynose">Runny Nose</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <!-- Additional Symptoms : Step 3 -->
+
+            <div class="col-md-12">
+                <div class="tab">
+                    <div class="col-12">
+                        <p class="simp">Additional Symptoms</p>
+                        <div>
+                            <input type="checkbox" id="symptoms" name="adSymptom[]" value="abdominalpain"><label
+                                for="abdominalpain">Abdominal Pain</label><br>
+                            <input type="checkbox" id="symptoms" name="adSymptom[]" value="vomiting"><label
+                                for="vomiting">Vomiting</label><br>
+                            <input type="checkbox" id="symptoms" name="adSymptom[]" value="diarrhoea"><label
+                                for="diarrhoea">Diarrhoea</label><br>
+                            <input type="checkbox" id="symptoms" name="adSymptom[]" value="chestpain"><label
+                                for="chestpain">Chest Pain or Pressure</label><br>
+                            <input type="checkbox" id="symptoms" name="adSymptom[]" value="musclepain"><label
+                                for="musclepain">Muscle Pain</label><br>
+                            <input type="checkbox" id="symptoms" name="adSymptom[]" value="loss"><label for="loss">Loss of taste and
+                                smell</label><br>
+                            <input type="checkbox" id="symptoms" name="adSymptom[]" value="rash"><label for="rash">Rash on skin, or
+                                discoloration of fingers or toes</label><br>
+                            <input type="checkbox" id="symptoms" name="adSymptom[]" value="speech"><label for="speech">Loss of
+                                speech or movement</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="overflow:auto;">
+                <div style="float:right;">
+                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                </div>
+            </div>
+
+            <!-- Circles which indicates the steps of the form: -->
+            <div class="indicators" style="text-align:center">
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>This COVID-19 Self Assessment System is only for software development purpose and may not yield actual
+                result. Any information given by users of this system will not be disclosed or store to anywhere.</p>
+        </div>
+    </footer>
+
+    <script>
+        for (i = 1; i < 100; i++) {
+            var opt = document.createElement("option");
+            document.getElementById("age").innerHTML += '<option id="' + i + '">' + i + '</option>';
+        }
+    </script>
+    <script src="js/covidtest.js"></script>
+</body>
+
+</html>
