@@ -7,3 +7,6 @@ In Self-COVID-Test/model/connection.php, use your own database information
 	$database = "<your server>";
   
   and in your database, import 'covid-info.sql' to add the database table
+
+
+live version: http://arifonoy.com/covid
