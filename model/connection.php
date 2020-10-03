@@ -1,9 +1,9 @@
 <?php
 
-	$server = "localhost:3306";
-	$user = "arifonoy";
-	$password = "AnonoymouS05";
-	$database = "arifonoy_mydata";
+	$server = "<your server name>";
+	$user = "<your username>";
+	$password = "<your passwror>";
+	$database = "<your db name>";
 
 
 	function getConnection(){
