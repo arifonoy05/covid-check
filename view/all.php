@@ -48,7 +48,7 @@ if($connection == true){
                 echo '<div class="col-1"><p>'.$row['id'].'</p></div>' ;
                 echo '<div class="col-3"><p>'.$row['uname'].'</p></div>'; 
                 echo '<div class="col-1"><p>'.$row['age'].'</p></div>'; 
-                echo '<div class="col-1"><p>'.$row['sex'].'</p></div>'; 
+                echo '<div class="col-1"><p style="text-transform: capitalize">'.$row['sex'].'</p></div>'; 
                 echo '<div class="col-1"><p>'.$row['temperature'].' °F</p></div>'; 
                 echo '<div class="col-2"><p style="text-align: center;">'.$row['date'].'</p></div>';
                 echo '<div class="col-1"><p>'.$row['score'].'</p></div>';
